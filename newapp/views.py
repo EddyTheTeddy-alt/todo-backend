@@ -71,7 +71,7 @@ def task_partial_update(request, pk):
 @permission_classes([IsAuthenticated])
 def task_delete(request, pk):
     task = Task.objects.get(id=pk, user=request.user)
-    task.delete(user=request.user)
+    task.delete()
     return Response("Task deleted successfully")
 
 @api_view(['POST'])
